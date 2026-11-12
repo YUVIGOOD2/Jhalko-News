@@ -3,7 +3,6 @@ import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
-import { isConfigured } from './lib/supabase';
 import Home from './pages/Home';
 import ArticlePage from './pages/ArticlePage';
 import { CategoryPage, SearchPage, VideosPage } from './pages/ListPages';
@@ -16,11 +15,6 @@ import { AdminDashboard, AllArticles, CategoriesManager, MessagesPage, ReviewQue
 function PublicLayout() {
   return (
     <>
-      {!isConfigured && (
-        <div className="bg-yellow-300 py-1 text-center text-xs font-semibold text-ink">
-          DEMO MODE – Supabase keys अभी नहीं लगी हैं (README देखें)
-        </div>
-      )}
       <Header />
       <main className="min-h-[60vh]"><Outlet /></main>
       <Footer />

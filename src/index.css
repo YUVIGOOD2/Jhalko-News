@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body { @apply font-sans antialiased; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4; }
+  .section-title { @apply mb-4 inline-block border-b-4 border-brand pb-1 font-head text-2xl font-bold; }
+  .section-title::before { content: ""; @apply mr-2 inline-block h-4 w-4 rounded-sm bg-ink align-middle; }
+  .btn-primary { @apply rounded-lg bg-brand px-5 py-2.5 font-bold text-ink shadow-[3px_3px_0_#0A0A0A] active:translate-y-px transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-outline { @apply rounded-lg border-2 border-gray-300 px-4 py-2 font-semibold transition hover:border-brand hover:text-brand-deep disabled:opacity-60; }
+  .btn-sm { @apply rounded-md border px-2.5 py-1 text-xs font-semibold transition hover:bg-gray-100; }
+  .input { @apply w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20 disabled:bg-gray-100; }
+  .label { @apply mb-1 block text-sm font-semibold text-gray-700; }
+
+  .prose-news { @apply text-[18px] leading-[1.9] text-gray-800; }
+  .prose-news p { @apply mb-5; }
+  .prose-news h2 { @apply mb-3 mt-8 font-head text-2xl font-bold text-ink; }
+  .prose-news blockquote { @apply my-6 border-l-4 border-brand bg-brand-light/40 px-5 py-3 italic; }
+  .prose-news ul { @apply mb-5 list-disc pl-6; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
